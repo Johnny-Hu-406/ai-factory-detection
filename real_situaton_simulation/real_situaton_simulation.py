@@ -1,6 +1,7 @@
 import cv2
 import glob
 # import matplotlib.pyplot as plt
+import math
 import numpy as np
 import os
 
@@ -111,7 +112,11 @@ def x_brightness(thimg ,brightness=100, diff=False):
 
 def cut_cropimg(crop_img, file_name, blcbackgroung=blcbackgroung):
     crop_img_shape= crop_img.shape
-    for j in range (0, 6):
+    blcbackgroung_shape = blcbackgroung.shape
+    w = blcbackgroung_shape[1]
+    design_range = round(crop_img_shape[1]/(w/2))
+
+    for j in range (0, design_range):
         x2=np.clip(((j + 2)* 160), 0, crop_img_shape[1])
 
         cut_img= crop_img[:,( j * 160 ): x2]
@@ -122,7 +127,6 @@ def cut_cropimg(crop_img, file_name, blcbackgroung=blcbackgroung):
         tar_back= blcbackgroung.copy()
         tar_back[ y_loc : y_loc+cut_img_h, 0:cut_img_w,:]=cut_img #create a black image
   
-        outpath = "/home/nvidia/Desktop/Intern_project/return_ori_img/cut_Test_img("+ file_name+ ")"
         outputImg_name=(CONV_OUT_PATH+ "/"+ file_name+ "_cut"+ str(j)+ ".jpg")
         cv2.imwrite(outputImg_name, tar_back)
 
@@ -130,7 +134,7 @@ def cut_cropimg(crop_img, file_name, blcbackgroung=blcbackgroung):
         pass
 
 
-def get_finger(crop_PCB, filename, pcb_index):
+def get_finger(crop_PCB, filename,lower_fin, upper_fin, pcb_index):
     act_img = crop_PCB.copy()
     h,w,_= act_img.shape
     hsv = cv2.cvtColor(act_img, cv2.COLOR_BGR2HSV)
@@ -181,15 +185,15 @@ def get_finger(crop_PCB, filename, pcb_index):
     cut_cropimg(crop_finger, str(filename)+ "_"+ str(pcb_index), blcbackgroung=blcbackgroung)
 
 
-def get_pcb(img, filename):
+def get_pcb(img, filename,lower_pcb, upper_pcb, lower_fin, upper_fin):
     act_img = img.copy()
     h,w,_= act_img.shape
     blcbackgroung = np.zeros((h,w,3), np.uint8)
     hsv = cv2.cvtColor(act_img, cv2.COLOR_BGR2HSV)
 
     # 70~110 is the range of green in hue
-    lower = np.array([115*0.705, 40, 20])
-    upper = np.array([140*0.705, 255, 200])
+    lower = np.array([lower_pcb*0.705, 40, 20])
+    upper = np.array([upper_pcb*0.705, 255, 200])
     mask = cv2.inRange(hsv, lower, upper)# get detect area
 
     # dilate
@@ -276,7 +280,7 @@ def get_pcb(img, filename):
 
             key = str(file_name)+ "_"+ str(pcb_index)
             pcb_loc_dc[key] = [left_px, up_px, right_px, down_px]
-            get_finger(pcb_img, filename, pcb_index = pcb_index)
+            get_finger(pcb_img, filename, lower_fin, upper_fin, pcb_index = pcb_index)
             # cv2.namedWindow(str(pcb_index),cv2.WINDOW_NORMAL)
             # cv2.imshow(str(pcb_index),pcb_img)
 
@@ -291,7 +295,7 @@ for filename in os.listdir(img_path):
     img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
     # cv2.namedWindow(str(filename), cv2.WINDOW_NORMAL)
     # cv2.imshow(str(filename), img.copy())
-    get_pcb(img, file_name)
+    get_pcb(img, file_name, 115, 140, 10 ,30)
 
 print(pcb_loc_dc)
 print(fin_loc_dc)
