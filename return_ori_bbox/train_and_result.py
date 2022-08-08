@@ -12,19 +12,17 @@ from data_aug.bbox_util import *
 自動產生資料增強>進行訓練
 得到inference結果>回推bbox
 '''
+
 H=608
 W=608
-# CONV_OUT_PATH = "/home/nvidia/Desktop/Intern_project/return_ori_img/cut_Test_img(03)/"
-CONV_OUT_PATH = "/workspace/cut_Test_img(03)/"
+CONV_OUT_PATH = "/home/nvidia/Desktop/github/ai-factory-detection/return_ori_bbox/cut_Test_img(03)"
 
-# img_name = '/home/nvidia/Desktop/Intern_project/return_ori_img/Test_img/01.jpg'
-# img = cv2.imread(img_name)
 blcbackgroung = np.zeros((H,W,3), np.uint8)
 
-# path = "/home/nvidia/Desktop/Intern_project/return_ori_img/Test_img"
-# txtpath = "/home/nvidia/Desktop/Intern_project/return_ori_img/cut_Test_img_infloc(03)"
-path = "/workspace/Test_img"
-txtpath = "/workspace/cut_Test_img_infloc(03)"
+path = "/home/nvidia/Desktop/github/ai-factory-detection/return_ori_bbox/Test_img"
+txtpath = "/home/nvidia/Desktop/Intern_project/return_ori_img/cut_Test_img_infloc(03)"
+# path = "/workspace/Test_img"
+# txtpath = "/workspace/cut_Test_img_infloc(03)"
 
 fin_loc_dc = {}
 cutimg_loc_dc = {}
