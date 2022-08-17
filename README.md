@@ -10,26 +10,16 @@
 
 ## Detection Example
 ---
-![](https://github.com/Johnny-Hu-intern/ai-factory-detection/blob/7ecfb519afebf4462fc1d6f0b6dba4a02ed46fab/README_intro_img/ori_img.png)
-
-
-- Original img
-
-![](https://github.com/Johnny-Hu-intern/ai-factory-detection/blob/75ade118adf91d5383030777919c0023ba5bcac8/README_intro_img/result.png)
-
-![](README_intro_img/pcb_mask1.png)
-
-- Labeled img
-<br>
+###  Original img
+![](README_intro_img/ori_img.png)
+### Labeled img
+![](README_intro_img/result.png)
 
 ## Dependencies
 ---
-1.Python 3.8.3 (default, Jul  2 2020, 16:21:59)
-
-2.OpenCV 4.1.2.30
-
-3.Intel® Core™ i5-7500 CPU @ 3.40GHz × 4
-<br>
+1. Python 3.8.3 (default, Jul  2 2020, 16:21:59)
+2. OpenCV 4.1.2.30
+3. Intel® Core™ i5-7500 CPU @ 3.40GHz × 4
 
 ## How to use
 ---
@@ -56,16 +46,42 @@ open app.json and change **"input_data"** location.
 
 ## About image process code 
 ---
-#### Grab PCB image in original image
-![](https://github.com/Johnny-Hu-intern/ai-factory-detection/blob/aa55a8925498b69ec1c134d72e82847ca83e8c95/README_intro_img/LUCID_6.jpg)
 
+### 1. Grab PCB image in original image
 - Original img
-
-<!-- ![](https://github.com/Johnny-Hu-intern/ai-factory-detection/blob/aa55a8925498b69ec1c134d72e82847ca83e8c95/README_intro_img/remove_noise_mask_screenshot_17.08.2022.png) -->
-- remove noises on the msak
-#### Grab gold finger in PCB image
-#### Cut photo into equal parts
+![](README_intro_img/ori_img.png)
+- Color in range
+![](README_intro_img/pcb_mask_with_noises.png)
+<br>
+- Remove noises on the msak
+![](README_intro_img/remove_noise_mask.png)
+<br>
+- Calculate counter area and find PCB location
+![](README_intro_img/pcb_mask1.png)
+<br>
+- Cut pcb on original image
+![](README_intro_img/cut_pcb.png)
 <br>
 
+### 2. Grab gold finger in PCB image
+- original pcb image
+![](README_intro_img/cut_pcb.png)
+<br>
+- get gold finger mask
+![](README_intro_img/finger_mask.png)
+<br>
+- Cut gold fonger on each pcb
+![](README_intro_img/cut_finger.png)
+<br>
+
+
+### 3. Cut photo into equal parts
+- original  gold fonger image
+![](README_intro_img/cut_finger.png)
+<br>
+- To be trained by yolov4, we cut and resize those images. 
+In this task, we resize the images size to 608*608.
+![](README_intro_img/tar_back1.png)
+<br>
 ## Reference
 ---
