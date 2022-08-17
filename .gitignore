@@ -135,6 +135,14 @@ return_ori_bbox/cut_Test_img(04)
 return_ori_bbox/cut_Test_img_infloc(01)
 return_ori_bbox/cut_Test_img_infloc(03)
 return_ori_bbox/cut_Test_img_infloc(04)
-real_situaton_simulation/real_img
-real_situaton_simulation/cut_Test_img
-real_situaton_simulation/cut_Test_img_aug
+# real_situaton_simulation/real_img
+# real_situaton_simulation/cut_Test_img
+# real_situaton_simulation/cut_Test_img_aug
+real_situaton_simulation/
+<<<<<<< HEAD
+# real_situaton_simulation/real_situaton_simulation.py
+=======
+real_situaton_simulation/real_situaton_simulation.py
+>>>>>>> ae2813ead3907e51a38aad4634e35b7b78b9d4bf
+Golden-finger-detecion/app/golden-finger/LUCID_TRI050S-C_183700028__20220815150751168_video1.avi
+Golden-finger-detecion/app/golden-finger/LUCID_6.jpg

@@ -1,0 +1,11 @@
+{
+    "application": "object detection",
+    "category": "sample",
+    "framework": "openvino",
+    "input_data": "app/golden-finger/LUCID_TRI050S-C_183700028__20220815150751168_video1.avi",
+    "prim": {
+        "model_json": "./app/golden-finger/yolo.json"
+    },
+    "app_name": "golden-finger",
+    "input_type": "V4L2"
+}

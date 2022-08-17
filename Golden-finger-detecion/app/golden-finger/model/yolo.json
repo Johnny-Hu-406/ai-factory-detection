@@ -1,0 +1,47 @@
+{
+    "platform": "intel",
+    "export_platform": "intel",
+    "model_config": {
+        "arch": "yolov4-tiny",
+        "classes": 1,
+        "input_shape": [
+            320,
+            320,
+            3
+        ]
+    },
+    "train_config": {
+        "train_dataset_path": "./Project/fin_VST_0809/iteration1/dataset/train",
+        "val_dataset_path": "./Project/fin_VST_0809/iteration1/dataset/val",
+        "test_dataset_path": "./Project/fin_VST_0809/iteration1/dataset/test",
+        "label_path": "./Project/fin_VST_0809/iteration1/dataset/classes.txt",
+        "pretrained_model_path": "./pretrainedmodel/yolov4-tiny.conv.29",
+        "save_model_path": "./Project/fin_VST_0809/iteration1/weights",
+        "optimizer": {
+            "learning_rate": 0.0013,
+            "decay": 0.0005,
+            "momentum": 0.9
+        },
+        "GPU": "0",
+        "batch": 64,
+        "subdivisions": 8,
+        "max_batches": 4000,
+        "datagenerator": {
+            "angle": 0,
+            "saturation": 1.5,
+            "exposure": 1.5,
+            "hue": 0.1,
+            "random": 1,
+            "mosaic": 0
+        },
+        "lr_config": {
+            "policy": "steps",
+            "burn_in": 1000,
+            "scales": [
+                0.1,
+                0.1
+            ]
+        }
+    },
+    "anchors": "  21, 30,  45, 22,  52, 28,  49, 40,  63, 36,  65, 42"
+}
