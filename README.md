@@ -10,11 +10,14 @@
 
 ## Detection Example
 ---
-![](https://github.com/Johnny-Hu-intern/ai-factory-detection/blob/aa55a8925498b69ec1c134d72e82847ca83e8c95/README_intro_img/LUCID_6.jpg)
+![](https://github.com/Johnny-Hu-intern/ai-factory-detection/blob/7ecfb519afebf4462fc1d6f0b6dba4a02ed46fab/README_intro_img/ori_img.png)
+
 
 - Original img
 
-![](https://github.com/Johnny-Hu-intern/ai-factory-detection/blob/aa55a8925498b69ec1c134d72e82847ca83e8c95/README_intro_img/result.png)
+![](https://github.com/Johnny-Hu-intern/ai-factory-detection/blob/75ade118adf91d5383030777919c0023ba5bcac8/README_intro_img/result.png)
+
+![](README_intro_img/pcb_mask1.png)
 
 - Labeled img
 <br>
