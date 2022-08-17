@@ -48,31 +48,40 @@ open app.json and change **"input_data"** location.
 ---
 
 ### 1. Grab PCB image in original image
-* Original img
+* Original img<br>
+
 ![](README_intro_img/ori_img.png)
-* Color in range
+* Color in range<br>
+
 ![](README_intro_img/pcb_mask_with_noises.png)
-* Remove noises on the msak
+* Remove noises on the msak<br>
+
 ![](README_intro_img/remove_noise_mask.png)
-* Calculate counter area and find PCB location
+* Calculate counter area and find PCB location<br>
+
 ![](README_intro_img/pcb_mask1.png)
-* Cut pcb on original image
+* Cut pcb on original image<br>
 ![](README_intro_img/cut_pcb.png)
 
 ### 2. Grab gold finger in PCB image
-- original pcb image
+- original pcb image<br>
+
 ![](README_intro_img/cut_pcb.png)
-- get gold finger mask
+- get gold finger mask<br>
+
 ![](README_intro_img/finger_mask.png)
-- Cut gold fonger on each pcb
+- Cut gold fonger on each pcb<br>
+
 ![](README_intro_img/cut_finger.png)
 
 
 ### 3. Cut photo into equal parts
-- original  gold fonger image
+- original  gold fonger image<br>
+
 ![](README_intro_img/cut_finger.png)
 - To be trained by yolov4, we cut and resize those images. 
-In this task, we resize the images size to 608*608.
+In this task, we resize the images size to 608*608.<br>
+
 ![](README_intro_img/tar_back1.png)
 ## Reference
 ---
