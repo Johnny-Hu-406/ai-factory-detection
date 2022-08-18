@@ -5,7 +5,7 @@
 
 - Detect Gold finger decfct on a PCB image or video
 - Deployment to Intel platforms
----
+
 
 ## Detection Example
 
@@ -14,12 +14,12 @@
 ### Labeled img
 ![](README_intro_img/result.png)
 
----
+
 ## Dependencies
 1. Python 3.8.3 (default, Jul  2 2020, 16:21:59)
 2. OpenCV 4.1.2.30
 3. Intel® Core™ i5-7500 CPU @ 3.40GHz × 4
----
+
 ## How to use
 
 ### Build Dockerfile
@@ -42,7 +42,7 @@ open app.json and change **"input_data"** location.
     ./docker/run.sh -f openvino
     python3 openvino_demo.py -c app/golden-finger/app.json
     
----
+
 ## About image process code 
 
 ### 1. Grab PCB image in original image
@@ -82,4 +82,7 @@ In this task, we resize the images size to 608*608.<br>
 
 
 ## Reference
----
+
+## Maintainers
+
+## License
