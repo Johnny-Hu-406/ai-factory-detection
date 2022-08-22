@@ -63,7 +63,7 @@ open app.json and change **"input_data"** location.
 * Color in range<br>
 ![](README_intro_img/pcb_mask_with_noises.png)
 
-* Remove noises on the msak<br>
+* Remove noises on the mask<br>
 ![](README_intro_img/remove_noise_mask.png)
 
 * Calculate counter area and find PCB location<br>
