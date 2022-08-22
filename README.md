@@ -10,8 +10,8 @@
 # Detection Example
 
 - Original img<br>
-![](README_intro_img/ori_img.png)
-- Labeled img<br>
+![](README_intro_img/LUCID_6.jpg)
+- Labeled img(image be rotated)<br>
 ![](README_intro_img/result.png)
 
 ## Table of Contents
@@ -34,7 +34,7 @@
 # How to use
 
 ## Build Dockerfile
-    ./build.sh
+    $ ./build.sh
 ## Choose detection file
 open app.json and change **"input_data"** location.
     
@@ -50,20 +50,21 @@ open app.json and change **"input_data"** location.
     "input_type": "V4L2"
 }
 ## Run container
-    ./Golden-finger-detecion./docker/run.sh -f openvino
+    $ ./Golden-finger-detecion./docker/run.sh -f openvino
 
 ## Run openvino_demo.py
-    cd Golden-finger-detecion
-    python3 openvino_demo.py -c app/golden-finger/app.json
+    $ cd Golden-finger-detecion
+    $ python3 openvino_demo.py -c app/golden-finger/app.json
     
 
 # About image process code 
 
 ## 1. Grab PCB image in original image
 * Original img<br>
-![](README_intro_img/ori_img.png)
+![](README_intro_img/LUCID_6.jpg)
 
-* Color in range<br>
+
+* Green in the range(image be rotated)<br>
 ![](README_intro_img/pcb_mask_with_noises.png)
 
 * Remove noises on the mask<br>
