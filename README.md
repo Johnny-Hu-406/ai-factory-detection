@@ -50,7 +50,10 @@ open app.json and change **"input_data"** location.
     "input_type": "V4L2"
 }
 ## Run container
-    ./docker/run.sh -f openvino
+    ./Golden-finger-detecion./docker/run.sh -f openvino
+
+## Run openvino_demo.py
+    cd Golden-finger-detecion
     python3 openvino_demo.py -c app/golden-finger/app.json
     
 
