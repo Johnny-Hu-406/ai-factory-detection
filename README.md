@@ -1,10 +1,10 @@
 # :factory: AI Factory Detection
-**Train a gold finger detection model and deploy on real factory environment.**
+**Develop a machine learning model capable of detecting gold fingers and deploy it in a real-world factory environment.**
 
 # Feature
 
-- Detect Gold finger decfct on a PCB image or video
-- Deployment to Intel platforms
+- Develop an image or video analysis system using machine learning techniques to detect defects in gold fingers on printed circuit boards (PCBs).
+- Deploy the gold finger defect detection system on Intel platforms for optimal performance and efficiency.
 
 
 # Detection Example
@@ -92,7 +92,7 @@ open app.json and change **"input_data"** location.
 ![](README_intro_img/cut_finger.png)
 
 - To be trained by yolov4, we cut and resize those images. 
-In this task, we resize the images size to 608*608.<br>
+In this task, we will be resizing the images to a size of 608x608 pixels..<br>
 ![](README_intro_img/tar_back1.png)
 
 
