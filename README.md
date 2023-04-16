@@ -102,4 +102,4 @@ In this task, we will be resizing the images to a size of 608x608 pixels..<br>
 [@Johnny-Hu](https://github.com/Johnny-Hu-intern)
 
 # License
-[MIT](LICENSE) © Johnny-Hu
+[MIT](LICENSE) © Johnny-Hu-406
